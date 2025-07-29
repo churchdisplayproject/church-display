@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Church Name</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      flex: 1;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .datetime, .weather {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      font-size: 1.25rem;
+      padding: 0.5rem;
+    }
+
+    .ticker {
+      background: #1d3557;
+      color: #fff;
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ticker-text {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Church Name</h1>
+    <div class="datetime" id="datetime">Loading date & time...</div>
+    <div class="weather" id="weather">Loading weather...</div>
+    <h2>Today's Events</h2>
+    <ul id="events">
+      <li>10:00 AM - Sunday Service</li>
+      <li>12:00 PM - Youth Group</li>
+      <li>2:00 PM - Bible Study</li>
+    </ul>
+  </div>
+
+  <!-- Scrolling banner -->
+  <div class="ticker">
+    <div class="ticker-text">
+      So far we have raised $1000
+    </div>
+  </div>
+
+  <script>
+    // Time and Date
+    function updateDateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById("datetime").innerText =
+        now.toLocaleDateString(undefined, options) + " " + now.toLocaleTimeString();
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    // Weather (placeholder)
+    document.getElementById("weather").innerText = "Partly Cloudy, 86°F";
+  </script>
+</body>
+</html>
