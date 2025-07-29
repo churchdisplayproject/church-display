@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,4 +65,72 @@
     // You can later replace this with real-time weather using an API
   </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Church Name</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .datetime, .weather {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      font-size: 1.25rem;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Church Name</h1>
+    <div class="datetime" id="datetime">Loading date & time...</div>
+    <div class="weather" id="weather">Loading weather...</div>
+    <h2>Today's Events</h2>
+    <ul id="events">
+      <li>10:00 AM - Sunday Service</li>
+      <li>12:00 PM - Youth Group</li>
+      <li>2:00 PM - Bible Study</li>
+    </ul>
+  </div>
+
+  <script>
+    // Time and Date
+    function updateDateTime() {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById("datetime").innerText =
+        now.toLocaleDateString(undefined, options) + " " + now.toLocaleTimeString();
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    // Weather (placeholder)
+    document.getElementById("weather").innerText = "Partly Cloudy, 86°F";
+    // You can later replace this with real-time weather using an API
+  </script>
+</body>
+>>>>>>> ac76fddfdec3a8cd05ff021e47fe42f84fda18b2
 </html>
